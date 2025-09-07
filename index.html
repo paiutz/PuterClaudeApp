@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Claude AI via Puter.js — Full App</title>
+    <title>🤖 Claude AI — Full App (Files + Voice)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.puter.com/puter.js"></script>
@@ -11,17 +11,30 @@
 <body>
     <div class="container">
         <header>
-            <h1>💬 Claude Chat (via Puter.js)</h1>
-            <button id="themeToggle">🌙 Dark Mode</button>
-            <button id="clearChat">🗑️ Clear Chat</button>
-            <button id="exportChat">📥 Export Chat</button>
+            <h1>💬 Claude Chat — Files & Voice</h1>
+            <div class="controls">
+                <button id="themeToggle">🌙 Dark Mode</button>
+                <button id="clearChat">🗑️ Clear</button>
+                <button id="exportChat">📥 Export</button>
+            </div>
         </header>
+
         <div id="chatBox" class="chat-box"></div>
+
         <div class="input-area">
-            <textarea id="userInput" placeholder="Type your message to Claude..." rows="3"></textarea>
+            <div class="input-controls">
+                <label class="file-btn">
+                    📎 <input type="file" id="fileInput" multiple hidden>
+                </label>
+                <button id="micBtn" class="mic-btn">🎤</button>
+            </div>
+            <textarea id="userInput" placeholder="Type or speak to Claude... (supports files)" rows="3"></textarea>
             <button id="sendBtn">Send →</button>
         </div>
+
+        <div id="fileList" class="file-list"></div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
